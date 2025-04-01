@@ -12,13 +12,13 @@
         </div>
 
     <!-- Alphabet Circles (A-Z) -->
-        <div class="flex flex-wrap justify-center gap-3">
+        <div class="flex flex-wrap justify-center gap-3 max-w-xl mx-auto">
         <a 
             v-for="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')" 
             :key="letter"
             href="#"
             class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white transition">
-            {{ letter }}
+                {{ letter }}
         </a>
         </div>
     </main>
