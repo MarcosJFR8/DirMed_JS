@@ -1,5 +1,5 @@
 <template>
-    <main class="container mx-auto px-4 py-12 text-center">
+    <main class="container mx-auto px-4 py-25 text-center bg-gradient-to-r from-green-600 to-green-300">
     <!-- Big Title -->
         <h1 class="text-4xl font-bold text-gray-800 mb-8">Medical Directory</h1>
 
