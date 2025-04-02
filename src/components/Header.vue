@@ -8,7 +8,7 @@
     <header class="bg-white shadow-sm">
         <div class="container px-4 py-4 justify-between flex items-center">
             <div class="flex items-center">
-                <img src="" alt="que buena shiet" class="h-12">
+                <img src="C:\Users\marco\OneDrive\Documentos\VSC_Projects\Dir_Med\DirMed_JS\src\assets\san_jose.jpg" alt="que buena shiet" class="h-12">
             </div>
             <div class="flex items-center">
                 <div class="h-8 w-px bg-gray-300 mx-70">
