@@ -1,6 +1,35 @@
 <template>
-    <main class="container mx-auto px-4 py-25 text-center bg-gradient-to-r from-green-600 to-green-300">
+    <main class="w-full bg-gradient-to-r from-green-600 to-green-300">
+
+    <div class="relative w-full h-64 md:h-96 overflow-hidden">
+        
+        <!-- Image + Title -->
+            <img 
+                src="@\assets\personal.jpg"  
+                alt="Medical Professionals"
+                class="absolute inset-0 w-full h-full object-cover">
+
+            <div class="absolute inset-0 bg-black/30"></div>
+
+            <div class="relative z-10 h-full flex flex-col items-start justify-center pl-8 text-white">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Haz tu cita con nosotros
+                    </h1>
+                </div>
+
+            
+    <!-- Appointment Button -->
+            <router-link 
+                to="/appointments" 
+                class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-full shadow-md transition-colors duration-300 whitespace-nowrap">
+                Book Appointment
+            </router-link>
+            </div>
+        </div>
+
     <!-- Big Title -->
+    <div class="mx-auto px-4 py-8 text-center">
         <h1 class="text-4xl font-bold text-gray-800 mb-8">Medical Directory</h1>
 
     <!-- Search Bar -->
@@ -21,6 +50,7 @@
                 {{ letter }}
         </a>
         </div>
+    </div>
     </main>
 </template>
 
