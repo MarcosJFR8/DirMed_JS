@@ -37,7 +37,10 @@
             <input
                 type="text"
                 placeholder="Search illnesses or afflictions..."
-                class="w-full px-6 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                class="w-full px-6 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 ctw-input"
+                autocomplete="off"
+                v-bind:data-ctw-ino="iNo">
+                <div class="ctw-window" v-bind:data-ctw-ino="iNo"></div>
         </div>
 
     <!-- Alphabet Circles (A-Z) -->
@@ -54,8 +57,37 @@
     </main>
 </template>
 
-<script>
-    export default {
-        name: "Body",
+<script lang="ts">
+import * as ECT from '@whoicd/icd11ect';
+
+
+export default {
+    name: "Body",
+    data() {
+        return {
+        iNo: 1,
     };
+},
+
+created() {
+    // configure the ECT
+    const settings = {
+      // the API located at the URL below should be used only for software development and testing
+      apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
+      autoBind: false, // in Vue.js we recommend using the manual binding
+    };
+    const callbacks = {
+      selectedEntityFunction: (selectedEntity) => {
+        // shows an alert with the code selected by the user and then clears the search results
+        alert('ICD-11 code selected: ' + selectedEntity.code);
+        ECT.Handler.clear(this.iNo);
+      },
+    };
+    ECT.Handler.configure(settings, callbacks);
+  },
+  mounted() {
+    // manual binding only after the component has been mounted
+    ECT.Handler.bind(this.iNo);
+  },
+};
 </script>
